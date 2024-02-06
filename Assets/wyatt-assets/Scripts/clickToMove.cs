@@ -12,21 +12,23 @@ using UnityEditor.SearchService;
 public class clickToMove : MonoBehaviour
 {
     public float speed = 5f;
-    private BoxSelector boxSelectorReference;
     public static bool mouseCurrentlyOver = false;
 
-
+    private BoxSelector boxSelectorReference;
     private Rigidbody2D rb;
+    private LineRenderer lineRenderer;
     private Vector3 target;
     private bool selected = false;
-    // Prevents the click and move command to happen on the same frame
-    private bool recentlyClicked = false;
+    private bool recentlyClicked = false;// Prevents the click and move command to happen on the same frame
     private bool walking = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        lineRendererSetup();
+
+
         rb = GetComponent<Rigidbody2D>();
         target = transform.position;
 
@@ -48,21 +50,51 @@ public class clickToMove : MonoBehaviour
             boxSelectorReference.setMouseOver(true);
         }
 
-
         Vector3 velocity;
-        if (walking && (target - transform.position).magnitude > .1)
+        if (walking && ((target - transform.position).magnitude > .1))
         {
             velocity = (target - transform.position).normalized * speed;
+            drawLine();
         }
         else
         {
             velocity = Vector2.zero;
             walking = false;
+            eraseLine();
         }
 
         rb.velocity = new Vector2(velocity.x, velocity.y);
         recentlyClicked = false;
     }
+
+    private void lineRendererSetup()
+    {
+        Gradient gradient = new Gradient();
+        gradient.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color.blue, 0.0f), new GradientColorKey(Color.red, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(1.0f, 1.0f) }
+        );
+
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.transform.parent = transform;
+        lineRenderer.startWidth = 0.3f;
+        lineRenderer.endWidth = 0f;
+        lineRenderer.colorGradient = gradient;
+        lineRenderer.positionCount = 2;
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        lineRenderer.sortingOrder--;
+    }
+    private void drawLine()
+    {
+        lineRenderer.positionCount = 2;
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, target);
+    }
+    private void eraseLine()
+    {
+        lineRenderer.positionCount = 0;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
