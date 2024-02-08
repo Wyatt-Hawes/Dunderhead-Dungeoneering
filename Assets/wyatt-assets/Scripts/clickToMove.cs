@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.SearchService;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent (typeof(Collider2D))]
@@ -13,12 +14,12 @@ public class clickToMove : MonoBehaviour
 {
     public float speed = 5f;
     public static bool mouseCurrentlyOver = false;
+    public bool selected = false;
 
     private BoxSelector boxSelectorReference;
     private Rigidbody2D rb;
     private LineRenderer lineRenderer;
     private Vector3 target;
-    private bool selected = false;
     private bool recentlyClicked = false;// Prevents the click and move command to happen on the same frame
     private bool walking = false;
 
@@ -41,13 +42,17 @@ public class clickToMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && selected && !recentlyClicked)
+        if (selected && Input.GetMouseButtonUp(1) && !recentlyClicked && !boxSelectorReference.currentlyDragging && !mouseOverMoveable())
         {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             target.z = transform.position.z;
             walking = true;
+            // disable();
+            //boxSelectorReference.setMouseOver(true);
+        }
+        if (Input.GetMouseButtonUp(0) && !recentlyClicked)
+        {
             disable();
-            boxSelectorReference.setMouseOver(true);
         }
 
         Vector3 velocity;
@@ -95,27 +100,26 @@ public class clickToMove : MonoBehaviour
         lineRenderer.positionCount = 0;
     }
 
-
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision");
         if(collision.gameObject.GetComponent<BoxSelector>())
         {
-            enable();
+            recentlyClicked = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<BoxSelector>() && Input.GetMouseButton(0))
+        if (collision.gameObject.GetComponent<BoxSelector>())
         {
-            disable();
+            recentlyClicked = true;
         }
     }
-
+    */
     private void OnMouseUp()
     {
-
+        recentlyClicked = true;
     }
     private void OnMouseDown()
     {
@@ -123,17 +127,28 @@ public class clickToMove : MonoBehaviour
         if (selected == false) { 
             enable(); 
             mouseCurrentlyOver = true; 
-        } else { 
+        } else if (boxSelectorReference.getAmountSelected() == 1){ 
             disable(); 
             mouseCurrentlyOver = false; 
         }
         recentlyClicked = true;
+        boxSelectorReference.deselectAllBut(this);
         //Delete the box to prevent the BoxSelector from being drawn when you intend to click a single unit
+    }
+
+    private bool mouseOverMoveable()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        if (hit && hit.collider.gameObject.GetComponent<clickToMove>() != null)
+        {
+            return true;
+        }
+        return false;
     }
 
     // Code that runs when the unit is 'selected'
     // We most likely want to put our highlighting code here
-    private void enable()
+    public void enable()
     {
         selected = true;
         gameObject.GetComponent<SpriteRenderer>().color = Color.green;
@@ -141,7 +156,7 @@ public class clickToMove : MonoBehaviour
 
     // Code that runs when the unit is 'deselected'
     // We most likely want to put our unhighlighting code here
-    private void disable()
+    public void disable()
     {
         selected = false;
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;

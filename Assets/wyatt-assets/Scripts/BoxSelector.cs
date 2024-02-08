@@ -2,18 +2,29 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
+using Object = UnityEngine.Object;
 
 public class BoxSelector : MonoBehaviour
-{   
+{
+    public bool currentlyDragging = false;
+
     private LineRenderer lineRenderer;
     private Vector2 initialMousePosition, currentMousePosition;
     private BoxCollider2D boxCollider;
+
+    private clickToMove[] allMoveables;
+    private List<clickToMove> selectedList = new List<clickToMove>();
+    private int alreadySelected = 0; //Helper variable for the list
+
     public bool mouseOverMoveable = false;
 
     // Start is called before the first frame update
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        allMoveables = Object.FindObjectsByType<clickToMove>(FindObjectsSortMode.None);
+
         lineRenderer.positionCount = 0;
     }
 
@@ -32,6 +43,7 @@ public class BoxSelector : MonoBehaviour
 
         if(Input.GetMouseButtonUp (0))
         {
+            Debug.Log("Remove");
             setMouseOver(false);
             removeBox();
         }
@@ -64,15 +76,104 @@ public class BoxSelector : MonoBehaviour
 
         boxCollider.size = new Vector2(Mathf.Abs(initialMousePosition.x - currentMousePosition.x),
                                         Mathf.Abs(initialMousePosition.y - currentMousePosition.y));
+
+        float x = Math.Abs(initialMousePosition.x - currentMousePosition.x);
+        float y = Math.Abs(initialMousePosition.y - currentMousePosition.y);
+        x = x * x;
+        y = y * y;
+        if (Math.Sqrt(x + y) > 1)
+        {
+            currentlyDragging = true;
+        }
     }
     public void removeBox()
     {
+        
+        Destroy(boxCollider); 
+        boxCollider = null;
         lineRenderer.positionCount = 0;
-        Destroy(boxCollider); boxCollider = null;
         transform.position = Vector3.zero;
+
+        if (currentlyDragging == false) return;
+        
+        selectedList.ForEach(moveable => { moveable.enable(); });
+        deselectAllBut(selectedList);
+
+        selectedList.Clear();
+        alreadySelected = 0;
+        currentlyDragging = false;
     }
+    public void deselectAllBut()
+    {
+        Debug.Log("deselect1");
+        foreach (clickToMove moveable in allMoveables)
+        {
+            moveable.disable();
+        }
+    }
+    public void deselectAllBut(clickToMove ignore)
+    {
+        Debug.Log("deselect2");
+        foreach (clickToMove moveable in allMoveables)
+        {
+            if(moveable == ignore)
+            {
+                continue;
+            }
+            moveable.disable();
+        }
+    }
+    public void deselectAllBut(List<clickToMove> ignore)
+    {
+        Debug.Log("deselect3");
+        foreach (clickToMove moveable in allMoveables)
+        {
+            if (ignore.Contains(moveable))
+            {
+                continue;
+            }
+            moveable.disable();
+        }
+    }
+    public int getAmountSelected()
+    {
+        int amountSelected = 0;
+        foreach (clickToMove moveable in allMoveables)
+        {
+            if (moveable.selected)
+            {
+                amountSelected++;
+            }
+        }
+        return amountSelected;
+    }
+
     public void setMouseOver(bool val)
     {
         mouseOverMoveable = val;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Col");
+        if (collision.gameObject.GetComponent<clickToMove>())
+        {
+            selectedList.Add(collision.gameObject.GetComponent<clickToMove>());
+            if (collision.gameObject.GetComponent<clickToMove>().selected)
+            {
+                alreadySelected++;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<clickToMove>() && Input.GetMouseButton(0))
+        {
+            if (collision.gameObject.GetComponent<clickToMove>().selected)
+            {
+                alreadySelected--;
+            }
+            selectedList.Remove(collision.gameObject.GetComponent<clickToMove>());
+        }
     }
 }
