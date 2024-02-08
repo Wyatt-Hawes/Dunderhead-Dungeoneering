@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,6 +37,10 @@ namespace GDL_Tutorial{
         public void Configure(){
             verticalLayoutGroup.padding = viewData.padding;
             verticalLayoutGroup.spacing = viewData.spacing;
+
+            imageTop.color = viewData.theme.primary_bg;
+            imageCenter.color = viewData.theme.secondary_bg;
+            imageBottom.color = viewData.theme.tertiary_bg;
         }
 
         private void OnValidate(){
@@ -44,18 +49,3 @@ namespace GDL_Tutorial{
     }
 }
 
-
-public class NewBehaviourScript : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
