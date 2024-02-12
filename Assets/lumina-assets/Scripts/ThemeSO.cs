@@ -20,6 +20,19 @@ namespace GDL_Tutorial
     public Color tertiary_text;
     [Header("Other")]
     public Color disable;
+
+    public Color GetBackgroundColor(Style style){
+        if (style == Style.Primary){ return primary_bg; }
+        else if (style == Style.Secondary){ return secondary_bg; }
+        else if (style == Style.Tertiary){ return tertiary_bg; }
+        return disable;
+        }
+    public Color GetTextColor(Style style){
+        if (style == Style.Primary){ return primary_bg; }
+        else if (style == Style.Secondary){ return secondary_bg; }
+        else if (style == Style.Tertiary){ return tertiary_bg; }
+        return disable;
+        }
     }
 }
 public class ThemeSO : MonoBehaviour

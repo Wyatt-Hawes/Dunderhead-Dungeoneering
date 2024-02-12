@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace GDL_Tutorial{
-    public class View : MonoBehaviour{
+    public class View : CustomUIComponent{
         public ViewSO viewData;
 
         public GameObject containerTop;
@@ -18,33 +18,20 @@ namespace GDL_Tutorial{
 
         private VerticalLayoutGroup verticalLayoutGroup;
 
-        private void Awake(){
-            Init();
-        }
-
-        public void Init(){
-            Setup();
-            Configure();
-        }
-
-        public void Setup(){
+        public override void Setup(){
             verticalLayoutGroup = GetComponent<VerticalLayoutGroup>();
             imageTop = containerTop.GetComponent<Image>();
             imageCenter = conttainerCenter.GetComponent<Image>();
             imageBottom = containerBottom.GetComponent<Image>();
         }
-
-        public void Configure(){
+ 
+        public override void Configure(){
             verticalLayoutGroup.padding = viewData.padding;
             verticalLayoutGroup.spacing = viewData.spacing;
 
             imageTop.color = viewData.theme.primary_bg;
             imageCenter.color = viewData.theme.secondary_bg;
-            imageBottom.color = viewData.theme.tertiary_bg;
-        }
-
-        private void OnValidate(){
-            Init();
+            imageBottom.color = viewData.theme.primary_bg;
         }
     }
 }
