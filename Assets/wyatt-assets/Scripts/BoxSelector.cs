@@ -140,7 +140,7 @@ public class BoxSelector : MonoBehaviour
         int amountSelected = 0;
         foreach (clickToMove moveable in allMoveables)
         {
-            if (moveable.selected)
+            if (moveable.isSelected())
             {
                 amountSelected++;
             }
@@ -158,7 +158,7 @@ public class BoxSelector : MonoBehaviour
         if (collision.gameObject.GetComponent<clickToMove>())
         {
             selectedList.Add(collision.gameObject.GetComponent<clickToMove>());
-            if (collision.gameObject.GetComponent<clickToMove>().selected)
+            if (collision.gameObject.GetComponent<clickToMove>().isSelected())
             {
                 alreadySelected++;
             }
@@ -169,7 +169,7 @@ public class BoxSelector : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<clickToMove>() && Input.GetMouseButton(0))
         {
-            if (collision.gameObject.GetComponent<clickToMove>().selected)
+            if (collision.gameObject.GetComponent<clickToMove>().isSelected())
             {
                 alreadySelected--;
             }

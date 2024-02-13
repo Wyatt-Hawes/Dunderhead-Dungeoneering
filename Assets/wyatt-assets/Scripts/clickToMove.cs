@@ -7,21 +7,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.SearchService;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent (typeof(Collider2D))]
 public class clickToMove : MonoBehaviour
 {
     public float speed = 5f;
-    public static bool mouseCurrentlyOver = false;
-    public bool selected = false;
+    
     public Vector3 target;
 
+    private static bool mouseCurrentlyOver = false;
+    private bool selected = false;
     private BoxSelector boxSelectorReference;
     private Rigidbody2D rb;
     private LineRenderer lineRenderer;
     private bool recentlyClicked = false;// Prevents the click and move command to happen on the same frame
     private bool walking = false;
+    private bool deselectOverride = false;
 
 
     // Start is called before the first frame update
@@ -31,6 +34,7 @@ public class clickToMove : MonoBehaviour
 
 
         rb = GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         target = transform.position;
 
         // boxSelectorReference = GameObject.Find("Object Name")  <--- find object by name
@@ -56,7 +60,7 @@ public class clickToMove : MonoBehaviour
         }
 
         Vector3 velocity;
-        if (walking && ((target - transform.position).magnitude > .1))
+        if ((walking || deselectOverride) && ((target - transform.position).magnitude > .1))
         {
             velocity = (target - transform.position).normalized * speed;
             drawLine();
@@ -68,9 +72,21 @@ public class clickToMove : MonoBehaviour
             eraseLine();
         }
 
+        if (!selected && !deselectOverride)
+        {
+            target = transform.position;
+        }
+
         rb.velocity = new Vector2(velocity.x, velocity.y);
         recentlyClicked = false;
     }
+
+    public bool isSelected() {return selected;}
+    public void setSelected(bool newVal){selected = newVal;}
+    public bool isMouseOver(){ return mouseCurrentlyOver; }
+
+    public bool isDeselectOverriden() { return deselectOverride; }
+    public void setDeselectOverride(bool newVal) { deselectOverride = newVal;}
 
     private void lineRendererSetup()
     {

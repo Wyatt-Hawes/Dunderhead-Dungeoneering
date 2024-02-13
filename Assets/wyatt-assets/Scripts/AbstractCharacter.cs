@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent(typeof(clickToMove))]
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
+public abstract class AbstractCharacter : MonoBehaviour
+{
+    // You should implement the ability code in here
+    public abstract void UseAbility();
+
+    // You should implement the flaw code in here
+    public abstract void FlawOccurs();
+
+
+}
