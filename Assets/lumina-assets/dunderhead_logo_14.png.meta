@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dunderhead_logo_14_0: 1057739633235822360
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -15,11 +15,11 @@ public class clickToMove : MonoBehaviour
     public float speed = 5f;
     public static bool mouseCurrentlyOver = false;
     public bool selected = false;
+    public Vector3 target;
 
     private BoxSelector boxSelectorReference;
     private Rigidbody2D rb;
     private LineRenderer lineRenderer;
-    private Vector3 target;
     private bool recentlyClicked = false;// Prevents the click and move command to happen on the same frame
     private bool walking = false;
 
