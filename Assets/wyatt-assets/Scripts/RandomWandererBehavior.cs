@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class RandomWandererBehavior : AbstractCharacter
 {
+    public Explosion myExplosion;
+
     public float randomLeftAloneTimeLowerBound = 5;
     public float randomLeftAloneTimeUpperBound = 10;
 
@@ -40,19 +44,28 @@ public class RandomWandererBehavior : AbstractCharacter
         if(timeLeftAlone > maximumTimeLeftAlone)
         {
             FlawOccurs();
-            maximumTimeLeftAlone = Random.Range(randomLeftAloneTimeLowerBound, randomLeftAloneTimeLowerBound);
+            maximumTimeLeftAlone = UnityEngine.Random.Range(randomLeftAloneTimeLowerBound, randomLeftAloneTimeLowerBound);
             timeLeftAlone = 3f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && moveHandler.isSelected())
+        {
+            UseAbility();
         }
     }
     public override void UseAbility()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Ability!");
+        Explosion myExp = Instantiate(myExplosion, transform.position, transform.rotation);
+
+        // Explosion time, explosion damage, object that is immune to hit (ourselves)
+        myExp.initialize(0.1f, 1.5f, this);
     }
 
     public override void FlawOccurs()
     {
-        float randomRadian = Random.Range(0f, 6.28319f);
-        float randomDistance = Random.Range(randomWanderDistanceMin, randomWanderDistanceMax);
+        float randomRadian = UnityEngine.Random.Range(0f, 6.28319f);
+        float randomDistance = UnityEngine.Random.Range(randomWanderDistanceMin, randomWanderDistanceMax);
 
         Vector3 currentPosition = transform.position;
         Vector3 randomDirection = new Vector3(Mathf.Cos(randomRadian), Mathf.Sin(randomRadian),0);
@@ -62,5 +75,10 @@ public class RandomWandererBehavior : AbstractCharacter
         moveHandler.setDeselectOverride(true);
         moveHandler.target = newDestination;
 
+    }
+
+    public override void takeDamage(float damage)
+    {
+        Debug.Log("Damage Taken! :" + damage);
     }
 }

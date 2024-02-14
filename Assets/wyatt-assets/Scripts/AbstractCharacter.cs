@@ -13,5 +13,8 @@ public abstract class AbstractCharacter : MonoBehaviour
     // You should implement the flaw code in here
     public abstract void FlawOccurs();
 
+    // The character should take some damage;
+    public abstract void takeDamage(float damage);
+
 
 }
