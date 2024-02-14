@@ -41,6 +41,7 @@ public class RandomWandererBehavior : AbstractCharacter
             timeLeftAlone += Time.deltaTime;
         }
 
+        // Begin wandering if we have been left alone for too long
         if(timeLeftAlone > maximumTimeLeftAlone)
         {
             FlawOccurs();
@@ -48,6 +49,7 @@ public class RandomWandererBehavior : AbstractCharacter
             timeLeftAlone = 3f;
         }
 
+        // Use ability (for testing)
         if (Input.GetKeyDown(KeyCode.Space) && moveHandler.isSelected())
         {
             UseAbility();
