@@ -5,14 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - BoxSelector
+  - Lava
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Tilemap
   - Water
   - UI
-  - 
+  - Projectiles
   - 
   - 
   - 
