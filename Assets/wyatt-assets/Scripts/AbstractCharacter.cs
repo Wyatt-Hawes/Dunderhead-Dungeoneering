@@ -16,5 +16,5 @@ public abstract class AbstractCharacter : MonoBehaviour
     // The character should take some damage;
     public abstract void takeDamage(float damage);
 
-
+    public abstract void onDeath();
 }

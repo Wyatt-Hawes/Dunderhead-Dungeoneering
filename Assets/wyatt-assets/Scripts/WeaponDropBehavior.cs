@@ -35,6 +35,11 @@ public class WeaponDropBehavior : AbstractCharacter
             UseAbility();
         }
 
+        if(health < 0)
+        {
+            onDeath();
+        }
+
     }
     public override void UseAbility()
     {
@@ -88,6 +93,11 @@ public class WeaponDropBehavior : AbstractCharacter
     public override void takeDamage(float damage)
     {
         health-= damage;
+    }
+
+    public override void onDeath()
+    {
+        Destroy(gameObject);
     }
 }
 

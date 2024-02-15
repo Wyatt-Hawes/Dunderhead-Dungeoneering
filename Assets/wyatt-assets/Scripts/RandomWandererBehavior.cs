@@ -55,6 +55,10 @@ public class RandomWandererBehavior : AbstractCharacter
         {
             UseAbility();
         }
+        if (health < 0)
+        {
+            onDeath();
+        }
     }
     public override void UseAbility()
     {
@@ -84,5 +88,10 @@ public class RandomWandererBehavior : AbstractCharacter
     {
         Debug.Log("Damage Taken! :" + damage);
         health -= damage;
+    }
+
+    public override void onDeath()
+    {
+        Destroy(gameObject);
     }
 }
