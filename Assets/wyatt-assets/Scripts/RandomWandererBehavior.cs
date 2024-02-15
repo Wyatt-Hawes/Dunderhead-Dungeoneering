@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 public class RandomWandererBehavior : AbstractCharacter
 {
     public Explosion myExplosion;
+    public float health = 5;
 
     public float randomLeftAloneTimeLowerBound = 5;
     public float randomLeftAloneTimeUpperBound = 10;
@@ -82,5 +83,6 @@ public class RandomWandererBehavior : AbstractCharacter
     public override void takeDamage(float damage)
     {
         Debug.Log("Damage Taken! :" + damage);
+        health -= damage;
     }
 }
