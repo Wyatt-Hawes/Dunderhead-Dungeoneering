@@ -326,6 +326,7 @@ GameObject:
   - component: {fileID: 525128148}
   - component: {fileID: 525128147}
   - component: {fileID: 525128149}
+  - component: {fileID: 525128150}
   m_Layer: 3
   m_Name: Water
   m_TagString: Untagged
@@ -3285,6 +3286,22 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &525128150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525128145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &586095584
 GameObject:
   m_ObjectHideFlags: 0
@@ -4650,6 +4667,85 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &696943632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 696943633}
+  - component: {fileID: 696943635}
+  - component: {fileID: 696943634}
+  m_Layer: 0
+  m_Name: Navmesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &696943633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696943632}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.35724437, y: 2.1175902, z: 0.033966728}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &696943634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696943632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bd44a44cd62c64fbfc1eea95b24880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 0
+  m_OverrideVector: {x: 1, y: 1, z: 1}
+--- !u!114 &696943635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696943632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04976799df50f54ba128eff723155a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_HideEditorLogs: 0
+  m_NavMeshData: {fileID: 23800000, guid: 92e58a129cb4e0d468ac70456ea98ce9, type: 2}
 --- !u!1 &699353974
 GameObject:
   m_ObjectHideFlags: 0
@@ -4948,19 +5044,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5168876225654371447, guid: a2435158f7d74334c8585124fd06ed95, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5168876225654371447, guid: a2435158f7d74334c8585124fd06ed95, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5168876225654371447, guid: a2435158f7d74334c8585124fd06ed95, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 840.29663
       objectReference: {fileID: 0}
     - target: {fileID: 5168876225654371447, guid: a2435158f7d74334c8585124fd06ed95, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -60.51169
       objectReference: {fileID: 0}
     - target: {fileID: 5618369839168575406, guid: a2435158f7d74334c8585124fd06ed95, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5012,19 +5108,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7774074389247070591, guid: a2435158f7d74334c8585124fd06ed95, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7774074389247070591, guid: a2435158f7d74334c8585124fd06ed95, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7774074389247070591, guid: a2435158f7d74334c8585124fd06ed95, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 967.49994
       objectReference: {fileID: 0}
     - target: {fileID: 7774074389247070591, guid: a2435158f7d74334c8585124fd06ed95, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -60.51169
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5073,6 +5169,7 @@ GameObject:
   - component: {fileID: 1653222717}
   - component: {fileID: 1653222719}
   - component: {fileID: 1653222718}
+  - component: {fileID: 1653222720}
   m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
@@ -10648,6 +10745,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1653222720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653222716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1681358050
 GameObject:
   m_ObjectHideFlags: 0
@@ -10660,6 +10773,7 @@ GameObject:
   - component: {fileID: 1681358054}
   - component: {fileID: 1681358053}
   - component: {fileID: 1681358055}
+  - component: {fileID: 1681358056}
   m_Layer: 3
   m_Name: Lava
   m_TagString: Lava
@@ -12169,6 +12283,22 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1681358056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681358050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1946516210
 GameObject:
   m_ObjectHideFlags: 0
@@ -12419,3 +12549,4 @@ SceneRoots:
   - {fileID: 846080033}
   - {fileID: 1946516212}
   - {fileID: 2120426336}
+  - {fileID: 696943633}
