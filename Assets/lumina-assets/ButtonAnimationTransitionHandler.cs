@@ -33,7 +33,6 @@ public class ButtonAnimationTransitionHandler : MonoBehaviour, IPointerUpHandler
         // Reset the parameters when the animation ends
         animator.SetBool("PointerUp", false);
         animator.SetBool("Highlighted", false);
-        animator.SetBool("Selected", false);
 
     }
 }
