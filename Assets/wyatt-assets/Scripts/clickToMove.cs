@@ -30,9 +30,9 @@ public class clickToMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+       
         lineRendererSetup();
-
-
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         target = transform.position;
