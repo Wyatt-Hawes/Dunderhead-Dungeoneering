@@ -17,6 +17,8 @@ public class BoxSelector : MonoBehaviour
     private List<clickToMove> selectedList = new List<clickToMove>();
     private int alreadySelected = 0; //Helper variable for the list
 
+    private int selectedIndex;
+
     public bool mouseOverMoveable = false;
 
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class BoxSelector : MonoBehaviour
         allMoveables = Object.FindObjectsByType<clickToMove>(FindObjectsSortMode.None);
 
         lineRenderer.positionCount = 0;
+        selectedIndex = 0;
     }
 
     // Update is called once per frame
@@ -46,6 +49,13 @@ public class BoxSelector : MonoBehaviour
             Debug.Log("Remove");
             setMouseOver(false);
             removeBox();
+        }
+        
+        // Handle scroll wheel input for selection
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        if (scrollInput != 0 && !currentlyDragging)
+        {
+            UpdateObjectSelection(scrollInput);
         }
     }
     private void initializeBox()
@@ -175,5 +185,29 @@ public class BoxSelector : MonoBehaviour
             }
             selectedList.Remove(collision.gameObject.GetComponent<clickToMove>());
         }
+    }
+
+    private void UpdateObjectSelection(float scrollInput)
+    {
+        int scrollDirection = Mathf.RoundToInt(scrollInput);
+
+        // Adjust the selected index based on scroll direction
+        selectedIndex += scrollDirection;
+
+        // Ensure the selected index stays within bounds
+        if (selectedIndex < 0)
+        {
+            selectedIndex = allMoveables.Length - 1;
+        }
+        else if (selectedIndex >= allMoveables.Length)
+        {
+            selectedIndex = 0;
+        }
+
+        // Deselect all objects
+        deselectAllBut();
+
+        // Select the object at the updated index
+        allMoveables[selectedIndex].enable();
     }
 }
