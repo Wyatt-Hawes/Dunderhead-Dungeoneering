@@ -14,6 +14,8 @@ using Unity.VisualScripting;
 public class clickToMove : MonoBehaviour
 {
     public float speed = 5f;
+    public Sprite normalSprite;
+    public Sprite highlightedSprite;
     
     public Vector3 target;
 
@@ -25,6 +27,7 @@ public class clickToMove : MonoBehaviour
     private bool recentlyClicked = false;// Prevents the click and move command to happen on the same frame
     private bool walking = false;
     private bool deselectOverride = false;
+    private SpriteRenderer spriteRenderer;
 
 
     // Start is called before the first frame update
@@ -40,6 +43,7 @@ public class clickToMove : MonoBehaviour
         // boxSelectorReference = GameObject.Find("Object Name")  <--- find object by name
         // boxSelectorReference = GameObject.FindWithTag("idName")  <--- find object by ID
         boxSelectorReference = FindAnyObjectByType<BoxSelector>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
@@ -167,7 +171,8 @@ public class clickToMove : MonoBehaviour
     public void enable()
     {
         selected = true;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        // gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        spriteRenderer.sprite = highlightedSprite;
     }
 
     // Code that runs when the unit is 'deselected'
@@ -175,6 +180,7 @@ public class clickToMove : MonoBehaviour
     public void disable()
     {
         selected = false;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        // gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        spriteRenderer.sprite = normalSprite;
     }
 }

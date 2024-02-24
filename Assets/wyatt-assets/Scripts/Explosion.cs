@@ -43,6 +43,7 @@ public class Explosion : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         AbstractCharacter characterHit = collision.gameObject.GetComponent<AbstractCharacter>();
+        BreakableObject breakableObject = collision.gameObject.GetComponent<BreakableObject>();
 
         // If its a character, only hit them once && !alreadyHit.Contains(characterHit)
         if (characterHit != null && characterHit != ignoreCharacter  && !alreadyHit.Contains(characterHit))
@@ -50,6 +51,10 @@ public class Explosion : MonoBehaviour
             Debug.Log("Hit something! " + Mathf.Round(duration * 100f) / 100f);
             characterHit.takeDamage(damageValue);
             alreadyHit.Add(characterHit);
+        }
+        if(breakableObject != null)
+        {
+            breakableObject.takeDamage(damageValue);
         }
     }
     void endExplosion()

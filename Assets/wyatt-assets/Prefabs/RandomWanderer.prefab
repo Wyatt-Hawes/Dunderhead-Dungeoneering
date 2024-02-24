@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6674868978544099146, guid: 6241d58aea4a05e469eb8c8518f91275, type: 3}
+  m_Sprite: {fileID: -6158533945971687071, guid: 41e9c860873ee2e4da9796281bf6aa8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -166,6 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  normalSprite: {fileID: -6158533945971687071, guid: 41e9c860873ee2e4da9796281bf6aa8b, type: 3}
+  highlightedSprite: {fileID: 5867612159028627434, guid: 9c50563f2fbbff747bdf1d6816eb2218, type: 3}
   target: {x: 0, y: 0, z: 0}
 --- !u!114 &1093631480488110227
 MonoBehaviour:
@@ -180,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myExplosion: {fileID: 2634410381384176889, guid: 6589ea69c17df674288b027e8da4a69e, type: 3}
+  health: 5
   randomLeftAloneTimeLowerBound: 5
   randomLeftAloneTimeUpperBound: 10
   randomWanderDistanceMin: 1
