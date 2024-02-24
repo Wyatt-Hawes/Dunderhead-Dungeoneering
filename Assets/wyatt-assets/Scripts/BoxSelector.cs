@@ -189,8 +189,16 @@ public class BoxSelector : MonoBehaviour
 
     private void UpdateObjectSelection(float scrollInput)
     {
-        int scrollDirection = Mathf.RoundToInt(scrollInput);
-
+        int scrollDirection = 0;
+        if (scrollInput > 0){
+            scrollDirection = 1;
+        }
+        else if (scrollInput < 0){
+            scrollDirection = -1;
+        }
+        else {
+            scrollDirection = 0;
+        }
         // Adjust the selected index based on scroll direction
         selectedIndex += scrollDirection;
 

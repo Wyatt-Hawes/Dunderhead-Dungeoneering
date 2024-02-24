@@ -8,7 +8,7 @@ public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public BoxSelector boxSelector;
 
     public clickToMove clickToMove;
-    public RandomWandererBehavior randomWandererBehavior;
+    public AbstractCharacter Character;
 
     private bool isMiddleMouseButtonDown = false;
     private void Start()
@@ -51,7 +51,9 @@ public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private void HandleButtonClick()
     {
         Debug.Log("Button Clicked!");
-
-        randomWandererBehavior.UseAbility();
+        if (boxSelector.getAmountSelected() == 1){
+            Character.UseAbility();
+        }
+        
     }
 }
