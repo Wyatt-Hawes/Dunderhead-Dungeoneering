@@ -7,13 +7,17 @@ public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     //public Animator animator;
     public BoxSelector boxSelector;
 
-    public clickToMove clickToMove;
-    public AbstractCharacter Character;
+    public GameObject CharacterReference;
+
+    private clickToMove clickToMove;
+    private AbstractCharacter Character;
 
     private bool isMiddleMouseButtonDown = false;
     private void Start()
     {
         // Find the RandomWandererBehavior component in the scene and set the reference
+        clickToMove = CharacterReference.GetComponent<clickToMove>();
+        Character = CharacterReference.GetComponent<WeaponDropBehavior>();
      
     }
     void Update()
@@ -51,17 +55,16 @@ public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public void HandleButtonClick()
     {
         Debug.Log("Button Clicked!");
-        //boxSelector.deselectAllBut();
+        boxSelector.deselectAllBut(clickToMove);
+        clickToMove.enable();
+        clickToMove.setRecentlyClicked(true);
         
-
-        // clickToMove.setSelected(true);
-        // clickToMove.enable();   
         if (boxSelector.getAmountSelected() == 1 && clickToMove.isSelected()){
             Character.UseAbility();
         }
         else
         {
-         //   boxSelector.deselectAllBut(clickToMove);
+            // clickToMove.disable();
         }
         
     }

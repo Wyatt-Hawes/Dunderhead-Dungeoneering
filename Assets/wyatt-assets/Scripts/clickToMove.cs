@@ -58,7 +58,7 @@ public class clickToMove : MonoBehaviour
             // disable();
             //boxSelectorReference.setMouseOver(true);
         }
-        if (Input.GetMouseButtonUp(0) && !recentlyClicked)
+        if (Input.GetMouseButtonUp(0) && !recentlyClicked && !mouseOverUI())
         {
             disable();
         }
@@ -166,7 +166,22 @@ public class clickToMove : MonoBehaviour
         return false;
     }
 
+    private bool mouseOverUI()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        if (hit && hit.collider.gameObject.tag == "UI")
+        {
+            Debug.Log("UI CLICKED");
+            return true;
+        }
+        return false;
+    }
 
+
+    public void setRecentlyClicked(bool newVal)
+    {
+        recentlyClicked = newVal;
+    }
 
     // Code that runs when the unit is 'selected'
     // We most likely want to put our highlighting code here
