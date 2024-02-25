@@ -48,11 +48,20 @@ public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         HandleButtonClick();
     }
 
-    private void HandleButtonClick()
+    public void HandleButtonClick()
     {
         Debug.Log("Button Clicked!");
-        if (boxSelector.getAmountSelected() == 1){
+        //boxSelector.deselectAllBut();
+        
+
+        // clickToMove.setSelected(true);
+        // clickToMove.enable();   
+        if (boxSelector.getAmountSelected() == 1 && clickToMove.isSelected()){
             Character.UseAbility();
+        }
+        else
+        {
+         //   boxSelector.deselectAllBut(clickToMove);
         }
         
     }

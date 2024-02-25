@@ -186,6 +186,23 @@ public class BoxSelector : MonoBehaviour
             selectedList.Remove(collision.gameObject.GetComponent<clickToMove>());
         }
     }
+    public void AddbyUI(clickToMove moveable)
+    {
+        selectedList.Add(moveable);
+        if (moveable.isSelected())
+        {
+            alreadySelected++;
+        }
+    }
+    private void RemovebyUI(clickToMove moveable)
+    {
+         if (moveable.isSelected())
+        {
+            alreadySelected--;
+        }
+        selectedList.Remove(moveable);
+       
+    }
 
     private void UpdateObjectSelection(float scrollInput)
     {
@@ -218,4 +235,5 @@ public class BoxSelector : MonoBehaviour
         // Select the object at the updated index
         allMoveables[selectedIndex].enable();
     }
+    
 }
