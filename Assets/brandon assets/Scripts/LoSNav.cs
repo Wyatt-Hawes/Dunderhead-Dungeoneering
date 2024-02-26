@@ -4,18 +4,18 @@ using UnityEngine;
 using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
 
-public class LoSEnemy : MonoBehaviour
+public class LoSNav : MonoBehaviour
 {
     [SerializeField] private float speed = 1.5f;
     private GameObject player;
 
     private bool hasLineOfSight = false;
-    
+
     //this is from original enemy script
-    //[SerializeField] Transform target;
+    [SerializeField] Transform target;
     NavMeshAgent agent;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,15 +30,18 @@ public class LoSEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hasLineOfSight)
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
+        Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.blue);
+        if (ray.collider != null)
         {
-            //agent.SetDestination(target.position);
-            //agent.SetDestination(player.transform.position);
-
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            hasLineOfSight = ray.collider.CompareTag("Player");
+            if (hasLineOfSight)
+            {
+                agent.SetDestination(ray.point);
+            }
         }
     }
-
+    /*
     private void FixedUpdate()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
@@ -46,7 +49,7 @@ public class LoSEnemy : MonoBehaviour
         if (ray.collider != null)
         {
             hasLineOfSight = ray.collider.CompareTag("Player");
-            if(hasLineOfSight)
+            if (hasLineOfSight)
             {
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
             }
@@ -55,5 +58,5 @@ public class LoSEnemy : MonoBehaviour
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
             }
         }
-    }
+    } */
 }
