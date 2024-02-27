@@ -37,7 +37,15 @@ public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private void HandleMiddleMouseClick()
     {
         Debug.Log("Middle Mouse Button Clicked!");
-
+        Debug.Log("Button Clicked!");
+     
+        if (boxSelector.getAmountSelected() == 1 && clickToMove.isSelected()){
+            Character.UseAbility();
+        }
+        else
+        {
+            // clickToMove.disable();
+        }
         // Add your logic for middle mouse button click here
     }
 

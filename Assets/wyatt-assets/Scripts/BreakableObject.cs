@@ -5,7 +5,7 @@ using UnityEngine;
 public class BreakableObject : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float health = 2f;
+    public float health = 1f;
     void Start()
     {
         

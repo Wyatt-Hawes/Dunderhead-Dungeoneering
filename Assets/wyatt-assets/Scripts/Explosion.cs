@@ -16,7 +16,7 @@ public class Explosion : MonoBehaviour
     // Defaults
     // duration: 10f
     // damageValue: 1f
-    public void initialize(float duration = 10f, float damageValue = 1f, AbstractCharacter ignoreCharacter = null)
+    public void initialize(float duration = 600f, float damageValue = 1f, AbstractCharacter ignoreCharacter = null)
     {
         this.duration = duration;
         this.damageValue = damageValue;
@@ -45,6 +45,11 @@ public class Explosion : MonoBehaviour
         AbstractCharacter characterHit = collision.gameObject.GetComponent<AbstractCharacter>();
         BreakableObject breakableObject = collision.gameObject.GetComponent<BreakableObject>();
 
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(collision.gameObject); // Destroy the projectile
+        }
+        
         // If its a character, only hit them once && !alreadyHit.Contains(characterHit)
         if (characterHit != null && characterHit != ignoreCharacter  && !alreadyHit.Contains(characterHit))
         {
