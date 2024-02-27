@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2536753012288204887}
   - component: {fileID: 8686938771402689099}
   - component: {fileID: 497734605665731582}
+  - component: {fileID: 4788895059927637493}
   m_Layer: 6
   m_Name: Spell Spike
   m_TagString: Bullet
@@ -164,3 +165,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 0.5}
   m_Direction: 0
+--- !u!114 &4788895059927637493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898577742278806948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b887a15d4551a42bf63e012f252f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1.1
