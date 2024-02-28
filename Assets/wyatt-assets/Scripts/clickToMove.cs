@@ -49,7 +49,7 @@ public class clickToMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (selected && Input.GetMouseButtonUp(1) && !recentlyClicked && !boxSelectorReference.currentlyDragging && !mouseOverMoveable())
+        if (selected && Input.GetMouseButton(1) && !recentlyClicked && !boxSelectorReference.currentlyDragging && !mouseOverMoveable())
         {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             target.z = transform.position.z;
