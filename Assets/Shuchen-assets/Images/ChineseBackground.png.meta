@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 33ff81cbc93b946998b37dff0f7de8ef
+guid: 070720ce7b85b4eb3954983c3511efc3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6318754097605638897
-    second: background-fotor-20240224195914_0
+      213: -6541604890202419571
+    second: ChineseBackground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background-fotor-20240224195914_0
+      name: ChineseBackground_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1faf3d2af59b0b750800000000000000
-      internalID: 6318754097605638897
+      spriteID: d8ec682e20d8735a0800000000000000
+      internalID: -6541604890202419571
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      background-fotor-20240224195914_0: 6318754097605638897
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

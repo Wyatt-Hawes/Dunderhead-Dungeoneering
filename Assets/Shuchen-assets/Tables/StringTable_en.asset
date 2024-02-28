@@ -18,27 +18,27 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 49533673472
+  - m_Id: 45058351104
     m_Localized: Play
     m_Metadata:
       m_Items: []
-  - m_Id: 842039025664
+  - m_Id: 765316816896
     m_Localized: Setting
     m_Metadata:
       m_Items: []
-  - m_Id: 939648868352
+  - m_Id: 3316997152768
     m_Localized: Quit
     m_Metadata:
       m_Items: []
-  - m_Id: 1111938293760
+  - m_Id: 3321204039680
     m_Localized: Volume
     m_Metadata:
       m_Items: []
-  - m_Id: 1224966397952
+  - m_Id: 3459129532416
     m_Localized: Language
     m_Metadata:
       m_Items: []
-  - m_Id: 1313516544000
+  - m_Id: 3534895439872
     m_Localized: Back
     m_Metadata:
       m_Items: []

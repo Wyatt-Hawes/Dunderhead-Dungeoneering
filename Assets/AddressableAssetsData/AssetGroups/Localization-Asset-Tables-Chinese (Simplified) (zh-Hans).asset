@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Localization-Asset-Tables-Chinese (Simplified) (zh-Hans)
   m_Data:
     m_SerializedData: []
-  m_GUID: 8273e98877f614468a483afb8831ac64
+  m_GUID: c8f834363f1b44c108a4aab1352f6e4e
   m_SerializeEntries:
   - m_GUID: 006b4fabe077c45999e00063d8807c29
     m_Address: AssetTable_zh-Hans

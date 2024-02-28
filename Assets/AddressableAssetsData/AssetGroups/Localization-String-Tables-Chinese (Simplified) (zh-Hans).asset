@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Chinese (Simplified) (zh-Hans)
   m_Data:
     m_SerializedData: []
-  m_GUID: d2c6a1b6a59bd438ca0ee5be950bae44
+  m_GUID: b8ae4800ef9c846f5937101163a7a585
   m_SerializeEntries:
   - m_GUID: 4847439d1e10141458064d9f0c0b379d
     m_Address: StringTable_zh-Hans

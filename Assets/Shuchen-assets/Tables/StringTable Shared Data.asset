@@ -15,38 +15,38 @@ MonoBehaviour:
   m_TableCollectionName: StringTable
   m_TableCollectionNameGuidString: 27e5af1c8d7964144985409fafe271f9
   m_Entries:
-  - m_Id: 49533673472
+  - m_Id: 45058351104
     m_Key: PlayKey
     m_Metadata:
       m_Items: []
-  - m_Id: 842039025664
+  - m_Id: 765316816896
     m_Key: SettingKey
     m_Metadata:
       m_Items: []
-  - m_Id: 939648868352
+  - m_Id: 3316997152768
     m_Key: QuitKey
     m_Metadata:
       m_Items: []
-  - m_Id: 1111938293760
+  - m_Id: 3321204039680
     m_Key: VolumeKey
     m_Metadata:
       m_Items: []
-  - m_Id: 1224966397952
+  - m_Id: 3459129532416
     m_Key: LanguageKey
     m_Metadata:
       m_Items: []
-  - m_Id: 1313516544000
+  - m_Id: 3534895439872
     m_Key: BackKey
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 4132011511043064190
+    rid: 4132011514340049150
   references:
     version: 2
     RefIds:
-    - rid: 4132011511043064190
+    - rid: 4132011514340049150
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1709081792354
+        m_CustomEpoch: 1709093102394

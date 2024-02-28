@@ -15,10 +15,10 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-English (en)
   m_Data:
     m_SerializedData: []
-  m_GUID: 062a3f414c01c4847b78c7e6b19d11eb
+  m_GUID: 144133ec1dc5d4843ab944f3d5135448
   m_SerializeEntries:
-  - m_GUID: 33ff81cbc93b946998b37dff0f7de8ef
-    m_Address: EnglishTitle
+  - m_GUID: d74a3d162b2ac4e43ac823f753076277
+    m_Address: EnglishBackground
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Localization-Asset-Tables-English (en)
   m_Data:
     m_SerializedData: []
-  m_GUID: a8c12584c95f145ad9c5f6b09fad81a8
+  m_GUID: 2cfae645280244550b9d0bd10fa23df3
   m_SerializeEntries:
   - m_GUID: 4eee43f1c0ef849cc988bbce03590b77
     m_Address: AssetTable_en

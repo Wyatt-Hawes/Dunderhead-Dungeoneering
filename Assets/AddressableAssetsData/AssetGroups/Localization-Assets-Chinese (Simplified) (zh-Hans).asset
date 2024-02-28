@@ -15,10 +15,10 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Chinese (Simplified) (zh-Hans)
   m_Data:
     m_SerializedData: []
-  m_GUID: 5d40795b64fc443d29c2fb5afa59c177
+  m_GUID: 5e66f143aeef043149cd00aed7088143
   m_SerializeEntries:
-  - m_GUID: d59f6cf4f3a54495dbc0ab1c678c940a
-    m_Address: ChineseTitle
+  - m_GUID: 070720ce7b85b4eb3954983c3511efc3
+    m_Address: ChineseBackground
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-zh-Hans

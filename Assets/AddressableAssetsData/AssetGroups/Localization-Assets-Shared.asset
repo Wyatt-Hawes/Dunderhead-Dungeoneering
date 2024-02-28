@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_Data:
     m_SerializedData: []
-  m_GUID: 9f6dc84a7b77e40b798b06d2366dff10
+  m_GUID: fa1d09e017e894529b5127d9c45cae58
   m_SerializeEntries:
   - m_GUID: 27e5af1c8d7964144985409fafe271f9
     m_Address: Assets/Shuchen-assets/Tables/StringTable Shared Data.asset

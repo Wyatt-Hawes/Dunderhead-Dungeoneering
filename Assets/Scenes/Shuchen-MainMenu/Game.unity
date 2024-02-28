@@ -860,7 +860,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: B
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 68db2022507f948aeba2bd1b07930f47, type: 2}
   m_sharedMaterial: {fileID: -5150066270254354352, guid: 68db2022507f948aeba2bd1b07930f47, type: 2}
@@ -955,7 +955,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:27e5af1c8d7964144985409fafe271f9
     m_TableEntryReference:
-      m_KeyId: 1313516544000
+      m_KeyId: 3534895439872
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

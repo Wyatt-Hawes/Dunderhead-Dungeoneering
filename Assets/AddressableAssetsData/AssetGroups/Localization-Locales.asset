@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Localization-Locales
   m_Data:
     m_SerializedData: []
-  m_GUID: 8a630c8b4e78844428e7d3e6aee0fd71
+  m_GUID: e124d296822a24da9b2c20353fbbdfbd
   m_SerializeEntries:
   - m_GUID: e1fbaf9f9f1c54b18b2c4aa8d1e7cfd9
     m_Address: Chinese (Simplified) (zh-Hans)

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468a46d0ae32c3544b7d98094e6448a9, type: 3}
   m_Name: AddressableAssetSettings
   m_EditorClassIdentifier: 
-  m_DefaultGroup: e73116ecd125e486f96dabf7e87eaa4a
+  m_DefaultGroup: 1639e095892b64d969c0522355cbdabe
   m_currentHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -38,7 +38,7 @@ MonoBehaviour:
     m_Id: 
   m_RemoteCatalogLoadPath:
     m_Id: 
-  m_ContentStateBuildPathProfileVariableName: <default settings path>
+  m_ContentStateBuildPathProfileVariableName: 
   m_CustomContentStateBuildPath: 
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
@@ -52,8 +52,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 13af9247babbc426a98ab2270885b57c, type: 2}
   - {fileID: 11400000, guid: 17974917796cb4bcabaf93946d3d032a, type: 2}
   - {fileID: 11400000, guid: 63bc498f0e61745e696cec61b0a09b83, type: 2}
-  - {fileID: 11400000, guid: 04b65c442e5bc4f16864bbe27d3c3c7e, type: 2}
   - {fileID: 11400000, guid: ad6c9f725790d4df48c6c41f3f5a6cb9, type: 2}
+  - {fileID: 11400000, guid: 04b65c442e5bc4f16864bbe27d3c3c7e, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -62,33 +62,33 @@ MonoBehaviour:
   m_ProfileSettings:
     m_Profiles:
     - m_InheritedParent: 
-      m_Id: 09848d9e53e58444bb45fa0527a7c4a4
+      m_Id: 3565da95404914865862f0965e719504
       m_ProfileName: Default
       m_Values:
-      - m_Id: dab7d21b51b0f4214af18edae51ef92e
+      - m_Id: e5d046f3055da4091a92cd22ca567d67
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
-      - m_Id: 5c91ed45c3ebb4eb482dbd3c9bf443c8
+      - m_Id: 5f82dac5a1f9846a6bbd5663307f436a
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
-      - m_Id: b204ea30532ed45cbb797464fa817240
+      - m_Id: a737046373fc24ca88a22dbbb21ecd5e
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
-      - m_Id: d9710d33693064d1dae1994668ee59ea
+      - m_Id: a69ff95c1f3fc4d7e923adb94d7c9f30
         m_Value: 'ServerData/[BuildTarget]'
-      - m_Id: 9d6bfa063f2ec428e8486356144869e7
+      - m_Id: 580365b57c4cb4ffc9851221d4e824b8
         m_Value: 'http://[PrivateIpAddress]:[HostingServicePort]'
     m_ProfileEntryNames:
-    - m_Id: dab7d21b51b0f4214af18edae51ef92e
+    - m_Id: e5d046f3055da4091a92cd22ca567d67
       m_Name: BuildTarget
       m_InlineUsage: 0
-    - m_Id: 5c91ed45c3ebb4eb482dbd3c9bf443c8
+    - m_Id: 5f82dac5a1f9846a6bbd5663307f436a
       m_Name: Local.BuildPath
       m_InlineUsage: 0
-    - m_Id: b204ea30532ed45cbb797464fa817240
+    - m_Id: a737046373fc24ca88a22dbbb21ecd5e
       m_Name: Local.LoadPath
       m_InlineUsage: 0
-    - m_Id: d9710d33693064d1dae1994668ee59ea
+    - m_Id: a69ff95c1f3fc4d7e923adb94d7c9f30
       m_Name: Remote.BuildPath
       m_InlineUsage: 0
-    - m_Id: 9d6bfa063f2ec428e8486356144869e7
+    - m_Id: 580365b57c4cb4ffc9851221d4e824b8
       m_Name: Remote.LoadPath
       m_InlineUsage: 0
     m_ProfileVersion: 1
@@ -112,7 +112,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 873b4ad07f90d4db8ae1eb9dea9468ed, type: 2}
   - {fileID: 11400000, guid: 52e2c5b2e47c84f6199e59d63d24d679, type: 2}
   - {fileID: 11400000, guid: 5bf69ab31f48d4f33bdfc35f9515d29c, type: 2}
-  m_ActiveProfileId: 09848d9e53e58444bb45fa0527a7c4a4
+  m_ActiveProfileId: 3565da95404914865862f0965e719504
   m_HostingServicesManager:
     m_HostingServiceInfos: []
     m_Settings: {fileID: 11400000}

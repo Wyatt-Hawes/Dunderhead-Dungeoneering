@@ -7,7 +7,6 @@ using UnityEngine.PlayerLoop;
 using Unity.Burst;
 using UnityEngine.UIElements;
 using System.Runtime.CompilerServices;
-using UnityEditor.U2D.Sprites;
 using NUnit.Framework;
 
 namespace GDL_Tutorial
