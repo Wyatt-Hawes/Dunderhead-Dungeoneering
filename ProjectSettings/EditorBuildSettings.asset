@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Shuchen-MainMenu/LoadScene.unity
+    path: Assets/Scenes/shuchen-main-menu/LoadScene.unity
     guid: 31aa9916327f94d328955ddcc104161d
   - enabled: 1
-    path: Assets/Scenes/Shuchen-MainMenu/MainMenu.unity
+    path: Assets/Scenes/shuchen-main-menu/MainMenu.unity
     guid: 77955cb9933304650bbf8a508c53676b
   - enabled: 1
-    path: Assets/Scenes/Shuchen-MainMenu/Game.unity
+    path: Assets/Scenes/shuchen-main-menu/Game.unity
     guid: ff9edcea03c6a4ac99ff805a4b757d14
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b976045eba15142f0830a7a677406dbc, type: 2}
