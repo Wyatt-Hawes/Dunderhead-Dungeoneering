@@ -149,10 +149,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c5cb6878e6b5644ac2f75bb1d0ed63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 699353975}
+  respawnPoint: {fileID: 1607170924}
   respawnDelay: 0.5
   respawnEffectPrefab: {fileID: 0}
-  respawnPoint2: {fileID: 1607170924}
+  respawnPoint2: {fileID: 699353975}
+--- !u!70 &9743259
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9743250}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.57, y: 0.65}
+  m_Direction: 0
 --- !u!1 &42086548 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8198622177946870558, guid: 84a6f32f7bd2b8d4a921184831acd4f5, type: 3}
@@ -3553,6 +3590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClumsyKnight
       objectReference: {fileID: 0}
+    - target: {fileID: 6915432264852482669, guid: 123bf1221d03e3f4db7b1d9938c50690, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3563,6 +3604,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5572108380453464744, guid: 123bf1221d03e3f4db7b1d9938c50690, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9743258}
+    - targetCorrespondingSourceObject: {fileID: 5572108380453464744, guid: 123bf1221d03e3f4db7b1d9938c50690, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9743259}
   m_SourcePrefab: {fileID: 100100000, guid: 123bf1221d03e3f4db7b1d9938c50690, type: 3}
 --- !u!1 &649780255
 GameObject:
@@ -5012,7 +5056,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: RandomWanderer
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2750264602493382416, guid: 440269a42c220ef4483c901ca564481b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -12755,22 +12800,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1872970336
-MonoBehaviour:
+--- !u!70 &1872970336
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872970328}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43c5cb6878e6b5644ac2f75bb1d0ed63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 699353975}
-  respawnDelay: 0.5
-  respawnEffectPrefab: {fileID: 0}
-  respawnPoint2: {fileID: 699353975}
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.64, y: 0.64}
+  m_Direction: 0
 --- !u!1 &1946516210
 GameObject:
   m_ObjectHideFlags: 0
