@@ -808,6 +808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Breakable Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 7715651080198029231, guid: 55dd5edf25de8ce428cb27435779e487, type: 3}
+      propertyPath: health
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

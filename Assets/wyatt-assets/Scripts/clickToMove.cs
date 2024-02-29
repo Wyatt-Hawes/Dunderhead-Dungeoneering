@@ -49,7 +49,7 @@ public class clickToMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (selected && Input.GetMouseButtonUp(1) && !recentlyClicked && !boxSelectorReference.currentlyDragging && !mouseOverMoveable())
+        if (selected && Input.GetMouseButton(1) && !recentlyClicked && !boxSelectorReference.currentlyDragging && !mouseOverMoveable())
         {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             target.z = transform.position.z;
@@ -101,7 +101,7 @@ public class clickToMove : MonoBehaviour
 
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.transform.parent = transform;
-        lineRenderer.startWidth = 0.3f;
+        lineRenderer.startWidth = 0.2f;
         lineRenderer.endWidth = 0f;
         lineRenderer.colorGradient = gradient;
         lineRenderer.positionCount = 2;

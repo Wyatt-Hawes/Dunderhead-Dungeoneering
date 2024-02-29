@@ -19,12 +19,17 @@ public class WeaponDropBehavior : AbstractCharacter
 
     public Explosion myExplosion;
     public GroundSword mySword;
+    public float ShieldDuration = 5f;
+    public float ShieldCooldown = 2f;
+
+    private Explosion activeExplosion;
     
     // Start is called before the first frame update
     void Start()
     {
         moveHandler = GetComponent<clickToMove>();
         defaultSpeed = moveHandler.speed;
+        ShieldCooldown = 0f;
     }
 
     // Update is called once per frame
@@ -40,16 +45,26 @@ public class WeaponDropBehavior : AbstractCharacter
             onDeath();
         }
 
+        if(activeExplosion != null)
+        {
+            activeExplosion.transform.position = transform.position;
+        }
+        ShieldCooldown -= Time.deltaTime;
+
+
     }
     public override void UseAbility()
     {
         if (!holdingWeapon){return;}
 
         Debug.Log("Ability!");
-        Explosion myExp = Instantiate(myExplosion, transform.position, transform.rotation);
+        // only spawn explosion if one doesn't exist
+        if(activeExplosion == null && ShieldCooldown <= 0) {
+            activeExplosion = Instantiate(myExplosion, transform.position, transform.rotation);
 
-        // Explosion time, explosion damage, object that is immune to hit (ourselves)
-        myExp.initialize(0.1f, 1.5f, this);
+            // Explosion time, explosion damage, object that is immune to hit (ourselves)
+            activeExplosion.initialize(ShieldDuration, 1.5f, this);
+        }
     }
 
     public override void FlawOccurs()
