@@ -101,7 +101,7 @@ public class clickToMove : MonoBehaviour
 
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.transform.parent = transform;
-        lineRenderer.startWidth = 0.3f;
+        lineRenderer.startWidth = 0.2f;
         lineRenderer.endWidth = 0f;
         lineRenderer.colorGradient = gradient;
         lineRenderer.positionCount = 2;

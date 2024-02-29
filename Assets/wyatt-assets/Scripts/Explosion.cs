@@ -48,6 +48,7 @@ public class Explosion : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             Destroy(collision.gameObject); // Destroy the projectile
+            endExplosion(); // Destroy the shield 
         }
         
         // If its a character, only hit them once && !alreadyHit.Contains(characterHit)
@@ -56,11 +57,15 @@ public class Explosion : MonoBehaviour
             Debug.Log("Hit something! " + Mathf.Round(duration * 100f) / 100f);
             characterHit.takeDamage(damageValue);
             alreadyHit.Add(characterHit);
+            endExplosion();
         }
         if(breakableObject != null)
         {
             breakableObject.takeDamage(damageValue);
+            endExplosion();
         }
+
+        // Now that we've hit one thing, break the shield
     }
     void endExplosion()
     {
