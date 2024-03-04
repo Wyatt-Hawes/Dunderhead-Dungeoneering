@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    //public Animator animator;
+    public Animator animator;
     public BoxSelector boxSelector;
 
     public GameObject CharacterReference;
@@ -22,6 +22,14 @@ public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     }
     void Update()
     {
+        if(clickToMove.isSelected())
+        {
+            animator.SetBool("Highlighted", true);
+        }
+        else
+        {
+            animator.SetBool("Disabled", true);
+        }
         // Check if the middle mouse button is pressed
         if (Input.GetMouseButtonDown(2)) // 2 represents the middle mouse button
         {
