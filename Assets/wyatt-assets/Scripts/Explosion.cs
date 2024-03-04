@@ -8,6 +8,7 @@ public class Explosion : MonoBehaviour
     // Start is called before the first frame update
     public float duration = 10f;
     public float damageValue = 1f;
+    public float rotationSpeed = 90f; // Degrees per second
 
 
     private List<AbstractCharacter> alreadyHit;
@@ -37,6 +38,9 @@ public class Explosion : MonoBehaviour
         {
             endExplosion();
         }
+        transform.Rotate(new Vector3(0, 0, 1), rotationSpeed * 2 * Time.deltaTime);
+        transform.Rotate(new Vector3(0,0,1), rotationSpeed * 0.5f * Time.deltaTime);
+        transform.Rotate(new Vector3(1, 0, 0), rotationSpeed  * Time.deltaTime);
     }
 
     // Something collides with the explosion

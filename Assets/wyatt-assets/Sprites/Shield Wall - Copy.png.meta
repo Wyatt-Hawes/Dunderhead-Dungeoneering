@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 33b369dac7f0b8c41819cf376546116a
+guid: a2b4dd00f31fbfa459986772baa0faa2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1478977666243158743
-    second: SheepPortrait_0
+      213: -4932456244922626295
+    second: Shield Wall - Copy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SheepPortrait_0
+      name: Shield Wall - Copy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 297
-        height: 298
+        width: 193
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 92d17d406ad997be0800000000000000
-      internalID: -1478977666243158743
+      spriteID: 90fca33bd256c8bb0800000000000000
+      internalID: -4932456244922626295
       vertices: []
       indices: 
       edges: []
@@ -156,8 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      SheepPortrait_0: -1478977666243158743
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
