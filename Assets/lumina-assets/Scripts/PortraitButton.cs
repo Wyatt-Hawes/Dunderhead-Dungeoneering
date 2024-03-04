@@ -17,7 +17,7 @@ public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     {
         // Find the RandomWandererBehavior component in the scene and set the reference
         clickToMove = CharacterReference.GetComponent<clickToMove>();
-        Character = CharacterReference.GetComponent<WeaponDropBehavior>();
+        Character = CharacterReference.GetComponent<AbstractCharacter>();
      
     }
     void Update()
