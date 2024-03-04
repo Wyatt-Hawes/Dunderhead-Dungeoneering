@@ -85,7 +85,6 @@ public class clickToMove : MonoBehaviour
     }
 
     public bool isSelected() {return selected;}
-    public void setSelected(bool newVal){selected = newVal;}
     public bool isMouseOver(){ return mouseCurrentlyOver; }
 
     public bool isDeselectOverriden() { return deselectOverride; }
