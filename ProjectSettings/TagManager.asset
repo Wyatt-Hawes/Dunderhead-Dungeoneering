@@ -8,6 +8,7 @@ TagManager:
   - Lava
   - Bullet
   - Coins
+  - Pressable
   layers:
   - Default
   - TransparentFX

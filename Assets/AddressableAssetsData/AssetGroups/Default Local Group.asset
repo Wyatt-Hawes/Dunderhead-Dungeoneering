@@ -16,7 +16,22 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 1639e095892b64d969c0522355cbdabe
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 8ed421e587880844ea8bb840b83c8803
+    m_Address: Assets/lumina-assets/ClosedDoor.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 429b22509acb3f548a5e01439fc01d47
+    m_Address: Assets/lumina-assets/OpenDoor.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b8eace61a9b417e4382b3fc618ba6c56
+    m_Address: Assets/lumina-assets/untitledTak1_37.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 26c81b1b096d0407bbf5966d4edc56bf, type: 2}
   m_SchemaSet:

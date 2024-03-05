@@ -80,22 +80,26 @@ public class WeaponDropBehavior : AbstractCharacter
         holdingWeapon = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+private void OnCollisionEnter2D(Collision2D collision)
+{
+    Debug.Log("Collision");
+
+    // Check if the collided object is on the "Walls" layer
+    if (collision.gameObject.layer == LayerMask.NameToLayer("Walls"))
     {
-        Debug.Log("Collision");
         Rigidbody2D collided = collision.gameObject.GetComponent<Rigidbody2D>();
 
-        if(collided != null && collided.isKinematic && holdingWeapon)
+        if (collided != null && collided.isKinematic && holdingWeapon)
         {
             FlawOccurs();
         }
     }
+}
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Trigger");
         GroundSword sword = collision.gameObject.GetComponent<GroundSword>();
-
+        
         // If its a character, only hit them once && !alreadyHit.Contains(characterHit)
         if (sword != null && sword.ableToBePickedUp)
         {
