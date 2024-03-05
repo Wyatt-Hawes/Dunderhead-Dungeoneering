@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SheepPortrait_0: -1478977666243158743
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

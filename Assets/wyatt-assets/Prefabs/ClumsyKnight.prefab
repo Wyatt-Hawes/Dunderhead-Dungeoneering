@@ -182,5 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  myExplosion: {fileID: 2634410381384176889, guid: 6589ea69c17df674288b027e8da4a69e, type: 3}
+  myExplosion: {fileID: 5246835556323762388, guid: 6589ea69c17df674288b027e8da4a69e, type: 3}
   mySword: {fileID: 8798497098899173364, guid: 45a10302f1131e54caff35465980df09, type: 3}
+  ShieldDuration: 5
+  ShieldCooldown: 2
