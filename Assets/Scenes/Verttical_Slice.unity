@@ -696,6 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533caae9eb0753249b5f249953ad80f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 976494105}
   boxSelector: {fileID: 390531981}
   CharacterReference: {fileID: 1157150243}
 --- !u!1001 &1039969673
@@ -706,6 +707,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1093631480488110227, guid: 440269a42c220ef4483c901ca564481b, type: 3}
+      propertyPath: myExplosion
+      value: 
+      objectReference: {fileID: 2634410381384176889, guid: 6589ea69c17df674288b027e8da4a69e, type: 3}
     - target: {fileID: 5663265070046558416, guid: 440269a42c220ef4483c901ca564481b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.04902655
@@ -22551,6 +22556,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8198622177946870558, guid: 84a6f32f7bd2b8d4a921184831acd4f5, type: 3}
   m_PrefabInstance: {fileID: 895819025}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1587459998 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 716347877520472593, guid: 84a6f32f7bd2b8d4a921184831acd4f5, type: 3}
+  m_PrefabInstance: {fileID: 895819025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1587460002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22563,6 +22573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533caae9eb0753249b5f249953ad80f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1587459998}
   boxSelector: {fileID: 390531981}
   CharacterReference: {fileID: 1699041763}
 --- !u!224 &1621137231 stripped
