@@ -11,12 +11,17 @@ public class ButtonEventHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Triggered!");
+        Debug.Log("Triggered! TriggerEnter");
         if (other.CompareTag("Player") && other.CompareTag("Pressable") && !buttonActivated)
         {
             Debug.Log("Button pressed!");
             ActivateButton();
         }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("Triggered! Collision");
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
