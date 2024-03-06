@@ -156,7 +156,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StandButtonCenter 1_0: 7479046291098490387
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
