@@ -11808,6 +11808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RandomWanderer
       objectReference: {fileID: 0}
+    - target: {fileID: 7355987955470962296, guid: 440269a42c220ef4483c901ca564481b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
