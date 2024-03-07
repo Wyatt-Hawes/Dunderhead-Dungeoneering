@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public abstract class AbstractCharacter : MonoBehaviour
 {
+    public bool CameraFollowing = false;
     // You should implement the ability code in here
     public abstract void UseAbility();
 

@@ -62,11 +62,11 @@ public class RandomWandererBehavior : AbstractCharacter
     }
     public override void UseAbility()
     {
-        Debug.Log("Ability!");
-        Explosion myExp = Instantiate(myExplosion, transform.position, transform.rotation);
+        // Debug.Log("Ability!");
+        // Explosion myExp = Instantiate(myExplosion, transform.position, transform.rotation);
 
-        // Explosion time, explosion damage, object that is immune to hit (ourselves)
-        myExp.initialize(0.1f, 1.5f, this);
+        // // Explosion time, explosion damage, object that is immune to hit (ourselves)
+        // myExp.initialize(0.1f, 1.5f, this);
     }
 
     public override void FlawOccurs()
