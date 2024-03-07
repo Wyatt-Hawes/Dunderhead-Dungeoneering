@@ -48,7 +48,7 @@ public class Explosion : MonoBehaviour
     {
         AbstractCharacter characterHit = collision.gameObject.GetComponent<AbstractCharacter>();
         BreakableObject breakableObject = collision.gameObject.GetComponent<BreakableObject>();
-
+        Debug.Log("Explosion Hit Something!");
         if (collision.gameObject.CompareTag("Bullet"))
         {
             Destroy(collision.gameObject); // Destroy the projectile
