@@ -1,15 +1,28 @@
+using System;
 using UnityEngine;
 
 public class PlayerReset : MonoBehaviour
 {
-    public Transform respawnPoint; // The point where the player will respawn
     public float respawnDelay = .5f; // Delay before respawning
     public GameObject respawnEffectPrefab; // Prefab for visual effect or floating text
-    public Transform respawnPoint2; // The point where the player will respawn
+    public Transform[] respawnPoints; // Array of respawn points
+
+    public AbstractCharacter player;
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Lava")
+        
+        if (collision.gameObject.CompareTag("Bullet")){
+            Destroy(collision.gameObject);
+            Debug.Log("Player hit by bullet!");
+            player.takeDamage(1);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Pits"))
         {
             // Call a method to respawn the player after a delay
             if (respawnEffectPrefab != null)
@@ -17,38 +30,39 @@ public class PlayerReset : MonoBehaviour
                 Instantiate(respawnEffectPrefab, transform.position, Quaternion.identity);
             }
             Invoke("RespawnPlayer", respawnDelay);
-        }
-        if (collision.gameObject.tag == "Bullet")
-        {
-            if (respawnEffectPrefab != null)
-            {
-                Instantiate(respawnEffectPrefab, transform.position, Quaternion.identity);
-            }
-            // Call a method to respawn the player after a delay
-            Invoke("RespawnPlayer2", respawnDelay);
+            player.takeDamage(1);
         }
     }
 
     private void RespawnPlayer()
     {
-        // Instantiate the respawn effect prefab if it's set
-        
+        // Find the nearest respawn point
+        Transform nearestRespawnPoint = FindNearestRespawnPoint();
 
         // Reset the player's position to the respawn point
-        transform.position = respawnPoint.position;
+        transform.position = nearestRespawnPoint.position;
 
         // Optional: You can add visual/audio effects to indicate the respawn
-        Debug.Log("Player respawned!");
+        Debug.Log("Player respawned at respawn point!");
     }
 
-    private void RespawnPlayer2()
+    private Transform FindNearestRespawnPoint()
     {
-        // Instantiate the respawn effect prefab if it's set
-        
-        // Reset the player's position to the respawn point
-        transform.position = respawnPoint2.position;
+        Transform nearestRespawnPoint = null;
+        float minDistance = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
 
-        // Optional: You can add visual/audio effects to indicate the respawn
-        Debug.Log("Player respawned!");
+        // Iterate through all respawn points to find the nearest one
+        foreach (Transform respawnPoint in respawnPoints)
+        {
+            float distance = Vector3.Distance(respawnPoint.position, currentPosition);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                nearestRespawnPoint = respawnPoint;
+            }
+        }
+
+        return nearestRespawnPoint;
     }
 }

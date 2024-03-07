@@ -12,7 +12,7 @@ using UnityEngine.UIElements;
 public class WeaponDropBehavior : AbstractCharacter
 {
     private float defaultSpeed;
-    public float health = 5;
+    public float health = 10;
 
     private bool holdingWeapon = true;
     private clickToMove moveHandler;
