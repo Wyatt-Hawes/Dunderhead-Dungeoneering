@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ButtonEventHandler : MonoBehaviour
 {
-    public Animator buttonAnimator;
     public Sprite newDoorSprite;
     private Sprite originalDoorSprite; // Store the original sprite to revert back
     public GameObject doorObject;
@@ -12,7 +11,7 @@ public class ButtonEventHandler : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Triggered! TriggerEnter");
-        if (other.CompareTag("Player") && other.CompareTag("Pressable") && !buttonActivated)
+        if (other.CompareTag("Player") && !buttonActivated)
         {
             Debug.Log("Button pressed!");
             ActivateButton();
@@ -26,8 +25,9 @@ public class ButtonEventHandler : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && other.CompareTag("Pressable") && buttonActivated)
+        if (other.CompareTag("Player") && buttonActivated)
         {
+            Debug.Log("Button deactivated!");
             DeactivateButton();
         }
     }
@@ -35,8 +35,6 @@ public class ButtonEventHandler : MonoBehaviour
     private void ActivateButton()
     {
         // Play the button animation
-        buttonAnimator.SetTrigger("Activate");
-
         // Change the door sprite
         if (doorObject != null)
         {
@@ -65,7 +63,7 @@ public class ButtonEventHandler : MonoBehaviour
     private void DeactivateButton()
     {
         // Reverse the button animation
-        buttonAnimator.SetTrigger("Deactivate");
+        
 
         // Revert the door sprite
         if (doorObject != null)
