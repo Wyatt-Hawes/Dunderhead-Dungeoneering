@@ -75,10 +75,10 @@ public class clickToMove : MonoBehaviour
             eraseLine();
         }
 
-        if (!selected && !deselectOverride)
-        {
-            target = transform.position;
-        }
+        //if (!selected && !deselectOverride)
+        //{
+        //    target = transform.position;
+        //}
 
         rb.velocity = new Vector2(velocity.x, velocity.y);
         recentlyClicked = false;
