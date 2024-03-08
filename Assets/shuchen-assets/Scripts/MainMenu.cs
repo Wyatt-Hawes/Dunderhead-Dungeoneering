@@ -19,7 +19,12 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Verttical_Slice");
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 
     public void QuitGame()

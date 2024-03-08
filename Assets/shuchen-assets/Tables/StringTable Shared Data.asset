@@ -39,6 +39,14 @@ MonoBehaviour:
     m_Key: BackKey
     m_Metadata:
       m_Items: []
+  - m_Id: 3424866035294208
+    m_Key: RestartKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3427123875274752
+    m_Key: GOKey
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

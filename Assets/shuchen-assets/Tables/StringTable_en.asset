@@ -42,6 +42,14 @@ MonoBehaviour:
     m_Localized: Back
     m_Metadata:
       m_Items: []
+  - m_Id: 3424866035294208
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3427123875274752
+    m_Localized: GAME OVER
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
