@@ -50,6 +50,10 @@ MonoBehaviour:
     m_Localized: GAME OVER
     m_Metadata:
       m_Items: []
+  - m_Id: 3444934840410112
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

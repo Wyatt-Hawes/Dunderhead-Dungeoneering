@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/shuchen-main-menu/MainMenu.unity
     guid: 77955cb9933304650bbf8a508c53676b
   - enabled: 1
+    path: Assets/Scenes/Verttical_Slice.unity
+    guid: ebc66321cf8059c49b076eb39d89aa50
+  - enabled: 1
     path: Assets/Scenes/shuchen-main-menu/GameOver.unity
     guid: ff9edcea03c6a4ac99ff805a4b757d14
   m_configObjects:
