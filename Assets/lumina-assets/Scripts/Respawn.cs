@@ -10,6 +10,9 @@ public class PlayerReset : MonoBehaviour
     public AbstractCharacter player;
 
 
+    
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         

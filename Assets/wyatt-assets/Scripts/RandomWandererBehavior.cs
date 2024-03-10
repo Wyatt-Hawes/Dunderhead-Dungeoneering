@@ -20,12 +20,14 @@ public class RandomWandererBehavior : AbstractCharacter
     private float defaultSpeed;
     private float timeLeftAlone = 0f;
 
+    private Animator animator;
     private float maximumTimeLeftAlone = 5f;
     // Start is called before the first frame update
     void Start()
     {
         moveHandler = GetComponent<clickToMove>();
         defaultSpeed = moveHandler.speed;
+        animator.enabled = false;
     }
 
     // Update is called once per frame
@@ -87,6 +89,7 @@ public class RandomWandererBehavior : AbstractCharacter
     public override void takeDamage(float damage)
     {
         Debug.Log("Damage Taken! :" + damage);
+        animator.SetTrigger("DamageTaken");
         health -= damage;
     }
 
