@@ -84,6 +84,11 @@ public class clickToMove : MonoBehaviour
         recentlyClicked = false;
     }
 
+    public void cancelMovementCommand()
+    {
+        target = transform.position;
+    }
+
     public bool isSelected() {return selected;}
     public bool isMouseOver(){ return mouseCurrentlyOver; }
 

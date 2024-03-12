@@ -82,7 +82,7 @@ public class WeaponDropBehavior : AbstractCharacter
 
 private void OnCollisionEnter2D(Collision2D collision)
 {
-    Debug.Log("Collision");
+    Debug.Log("Knight Collision");
 
     // Check if the collided object is on the "Walls" layer
     if (collision.gameObject.layer == LayerMask.NameToLayer("Walls"))
