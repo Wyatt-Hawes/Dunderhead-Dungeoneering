@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class WeaponDropBehavior : AbstractCharacter
 {
@@ -116,6 +117,8 @@ private void OnCollisionEnter2D(Collision2D collision)
 
     public override void onDeath()
     {
+        // Change this later, this is going to break if we change the scene name
+        SceneManager.LoadScene("GameOver");
         Destroy(gameObject);
     }
 }
