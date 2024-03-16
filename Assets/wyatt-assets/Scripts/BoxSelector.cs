@@ -21,19 +21,24 @@ public class BoxSelector : MonoBehaviour
 
     public bool mouseOverMoveable = false;
 
+    public float zoom = -10; //
+    private Camera mainCamera;
+
+    private clickToMove followTarget;
     // Start is called before the first frame update
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
         allMoveables = Object.FindObjectsByType<clickToMove>(FindObjectsSortMode.None);
-
         lineRenderer.positionCount = 0;
         selectedIndex = 0;
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if(Input.GetMouseButtonDown(0) && !mouseOverMoveable) {
             initializeBox();
         }
@@ -57,6 +62,8 @@ public class BoxSelector : MonoBehaviour
         {
             UpdateObjectSelection(scrollInput);
         }
+
+        updateCamera();
     }
     private void initializeBox()
     {
@@ -119,7 +126,9 @@ public class BoxSelector : MonoBehaviour
         foreach (clickToMove moveable in allMoveables)
         {
             moveable.disable();
+            selectedList.Remove(moveable);
         }
+
     }
     public void deselectAllBut(clickToMove ignore)
     {
@@ -131,6 +140,7 @@ public class BoxSelector : MonoBehaviour
                 continue;
             }
             moveable.disable();
+            selectedList.Remove(moveable);
         }
     }
     public void deselectAllBut(List<clickToMove> ignore)
@@ -143,6 +153,7 @@ public class BoxSelector : MonoBehaviour
                 continue;
             }
             moveable.disable();
+            selectedList.Remove(moveable);
         }
     }
     public int getAmountSelected()
@@ -156,6 +167,18 @@ public class BoxSelector : MonoBehaviour
             }
         }
         return amountSelected;
+    }
+
+    public void updateCamera(){
+        if(selectedList.Count == 1){
+            // Update the Follow Target
+            followTarget = selectedList[0];
+            Debug.Log("Follow Target: " + followTarget);
+        }
+        if (followTarget != null)
+        {
+            mainCamera.transform.position = new Vector3(followTarget.transform.position.x, followTarget.transform.position.y, zoom);
+        }
     }
 
     public void setMouseOver(bool val)
@@ -234,6 +257,7 @@ public class BoxSelector : MonoBehaviour
 
         // Select the object at the updated index
         allMoveables[selectedIndex].enable();
+        selectedList.Add(allMoveables[selectedIndex]);
     }
     
 }
