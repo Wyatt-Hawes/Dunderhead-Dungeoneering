@@ -39,6 +39,8 @@ public class ButtonEventHandler : MonoBehaviour
         if (doorObject != null)
         {
             SpriteRenderer doorSpriteRenderer = doorObject.GetComponent<SpriteRenderer>();
+            doorObject.GetComponent<BoxCollider2D>().enabled = false;
+
             if (doorSpriteRenderer != null && newDoorSprite != null)
             {
                 // Store the original sprite to revert back later
@@ -68,6 +70,7 @@ public class ButtonEventHandler : MonoBehaviour
         // Revert the door sprite
         if (doorObject != null)
         {
+            doorObject.GetComponent<BoxCollider2D>().enabled = true;
             SpriteRenderer doorSpriteRenderer = doorObject.GetComponent<SpriteRenderer>();
             if (doorSpriteRenderer != null && originalDoorSprite != null)
             {
