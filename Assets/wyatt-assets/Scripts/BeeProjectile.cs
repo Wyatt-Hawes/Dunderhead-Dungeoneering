@@ -44,7 +44,7 @@ public class BeeProjectile : MonoBehaviour
         if(!canCollide) { return; }
         AbstractCharacter characterHit = collision.gameObject.GetComponent<AbstractCharacter>();
         BreakableObject breakableObject = collision.gameObject.GetComponent<BreakableObject>();
-        Debug.Log("Explosion Hit Something!");
+        //Debug.Log("Explosion Hit Something!");
 
         // If its a character deal damage
         if (characterHit != null)
