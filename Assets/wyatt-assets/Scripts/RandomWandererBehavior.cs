@@ -26,8 +26,9 @@ public class RandomWandererBehavior : AbstractCharacter
     void Start()
     {
         moveHandler = GetComponent<clickToMove>();
+        animator = GetComponent<Animator>();
         defaultSpeed = moveHandler.speed;
-        animator.enabled = false;
+       
     }
 
     // Update is called once per frame
@@ -89,7 +90,7 @@ public class RandomWandererBehavior : AbstractCharacter
     public override void takeDamage(float damage)
     {
         Debug.Log("Damage Taken! :" + damage);
-        animator.SetTrigger("DamageTaken");
+        animator.SetTrigger("Damaged");
         health -= damage;
     }
 

@@ -24,6 +24,8 @@ public class WeaponDropBehavior : AbstractCharacter
     public float ShieldCooldown = 2f;
 
     private Explosion activeExplosion;
+
+    private Animator animator;
     
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,7 @@ public class WeaponDropBehavior : AbstractCharacter
         moveHandler = GetComponent<clickToMove>();
         defaultSpeed = moveHandler.speed;
         ShieldCooldown = 0f;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -113,6 +116,7 @@ private void OnCollisionEnter2D(Collision2D collision)
     public override void takeDamage(float damage)
     {
         health-= damage;
+        animator.SetTrigger("Damaged");
     }
 
     public override void onDeath()
