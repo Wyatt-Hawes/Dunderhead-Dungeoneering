@@ -115,8 +115,8 @@ private void OnCollisionEnter2D(Collision2D collision)
 
     public override void takeDamage(float damage)
     {
-        health-= damage;
         animator.SetTrigger("Damaged");
+        health-= damage;
     }
 
     public override void onDeath()

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+
 
 public class RandomWandererBehavior : AbstractCharacter
 {
@@ -96,6 +98,7 @@ public class RandomWandererBehavior : AbstractCharacter
 
     public override void onDeath()
     {
+        SceneManager.LoadScene("GameOver");
         Destroy(gameObject);
     }
 }

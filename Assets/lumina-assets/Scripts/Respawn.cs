@@ -9,8 +9,13 @@ public class PlayerReset : MonoBehaviour
 
     public AbstractCharacter player;
 
+    private Animator animator;
 
     
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -28,18 +33,20 @@ public class PlayerReset : MonoBehaviour
         if (collision.gameObject.CompareTag("Pits"))
         {
             // Call a method to respawn the player after a delay
+            animator.SetTrigger("Fall");
             if (respawnEffectPrefab != null)
             {
                 Instantiate(respawnEffectPrefab, transform.position, Quaternion.identity);
             }
             Invoke("RespawnPlayer", respawnDelay);
-            player.takeDamage(1);
         }
     }
 
     private void RespawnPlayer()
     {
         // Find the nearest respawn point
+        player.takeDamage(1);
+
         Transform nearestRespawnPoint = FindNearestRespawnPoint();
 
         // Reset the player's position to the respawn point
