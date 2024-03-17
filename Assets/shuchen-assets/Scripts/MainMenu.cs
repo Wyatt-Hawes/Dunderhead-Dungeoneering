@@ -38,4 +38,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene("Verttical_Slice");
+    }
+
 }
