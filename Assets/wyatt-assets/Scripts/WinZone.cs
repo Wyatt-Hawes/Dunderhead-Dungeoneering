@@ -19,7 +19,7 @@ public class WinZone : MonoBehaviour
     {
         if (total_characters >= 4)
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameEnd");
         }
     }
 
