@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/shuchen-main-menu/LoadScene.unity
+    path: Assets/Scenes/Game/LoadScene.unity
     guid: 31aa9916327f94d328955ddcc104161d
   - enabled: 1
-    path: Assets/Scenes/shuchen-main-menu/MainMenu.unity
+    path: Assets/Scenes/Game/MainMenu.unity
     guid: 77955cb9933304650bbf8a508c53676b
   - enabled: 1
-    path: Assets/Scenes/Verttical_Slice.unity
+    path: Assets/Scenes/Game/Verttical_Slice.unity
     guid: ebc66321cf8059c49b076eb39d89aa50
   - enabled: 1
-    path: Assets/Scenes/shuchen-main-menu/GameOver.unity
+    path: Assets/Scenes/Game/GameOver.unity
     guid: ff9edcea03c6a4ac99ff805a4b757d14
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b976045eba15142f0830a7a677406dbc, type: 2}
