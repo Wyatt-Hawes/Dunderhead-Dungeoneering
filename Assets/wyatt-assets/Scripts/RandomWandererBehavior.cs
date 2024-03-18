@@ -10,7 +10,6 @@ using UnityEngine.SceneManagement;
 public class RandomWandererBehavior : AbstractCharacter
 {
     public Explosion myExplosion;
-    public float health = 5;
 
     public float randomLeftAloneTimeLowerBound = 5;
     public float randomLeftAloneTimeUpperBound = 10;
@@ -30,6 +29,8 @@ public class RandomWandererBehavior : AbstractCharacter
         moveHandler = GetComponent<clickToMove>();
         animator = GetComponent<Animator>();
         defaultSpeed = moveHandler.speed;
+        CurrentHealth = 5;
+        MaxHealth = 5;
        
     }
 
@@ -60,7 +61,7 @@ public class RandomWandererBehavior : AbstractCharacter
         {
             UseAbility();
         }
-        if (health < 0)
+        if (CurrentHealth <= 0)
         {
             onDeath();
         }
@@ -93,7 +94,7 @@ public class RandomWandererBehavior : AbstractCharacter
     {
         Debug.Log("Damage Taken! :" + damage);
         animator.SetTrigger("Damaged");
-        health -= damage;
+        CurrentHealth -= damage;
     }
 
     public override void onDeath()

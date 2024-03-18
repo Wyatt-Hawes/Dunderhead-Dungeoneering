@@ -13,7 +13,6 @@ using UnityEngine.SceneManagement;
 public class WeaponDropBehavior : AbstractCharacter
 {
     private float defaultSpeed;
-    public float health = 10;
 
     private bool holdingWeapon = true;
     private clickToMove moveHandler;
@@ -34,6 +33,8 @@ public class WeaponDropBehavior : AbstractCharacter
         defaultSpeed = moveHandler.speed;
         ShieldCooldown = 0f;
         animator = GetComponent<Animator>();
+        CurrentHealth = 10;
+        MaxHealth = 10;
     }
 
     // Update is called once per frame
@@ -44,7 +45,7 @@ public class WeaponDropBehavior : AbstractCharacter
             UseAbility();
         }
 
-        if(health < 0)
+        if(CurrentHealth <= 0)
         {
             onDeath();
         }
@@ -116,7 +117,7 @@ private void OnCollisionEnter2D(Collision2D collision)
     public override void takeDamage(float damage)
     {
         animator.SetTrigger("Damaged");
-        health-= damage;
+       CurrentHealth-= damage;
     }
 
     public override void onDeath()

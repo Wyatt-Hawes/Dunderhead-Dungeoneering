@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -12,12 +13,16 @@ public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private clickToMove clickToMove;
     private AbstractCharacter Character;
 
+    private TMP_Text healthText;
+    
+
     private bool isMiddleMouseButtonDown = false;
     private void Start()
     {
         // Find the RandomWandererBehavior component in the scene and set the reference
         clickToMove = CharacterReference.GetComponent<clickToMove>();
         Character = CharacterReference.GetComponent<AbstractCharacter>();
+        healthText = GetComponentInChildren<TextMeshProUGUI>();
      
     }
     void Update()
@@ -40,6 +45,7 @@ public class PortraitButton : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         {
             isMiddleMouseButtonDown = false;
         }
+        healthText.text = Character.CurrentHealth.ToString() + " / " + Character.MaxHealth.ToString() + " HP";
     }
 
     private void HandleMiddleMouseClick()
